@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "mocha": "mocha --compilers coffee:coffee-script/register",
-    "webpack": "webpack --config index.js",
-    "watch": "npm i && npm run webpack -- -w",
+    "build": "webpack --config index.js",
+    "watch": "npm i && npm run build -- -w",
     "webpack-dev-server": "webpack-dev-server --config index.js",
     "livereload": "livereload",
     "ws": "ws",
