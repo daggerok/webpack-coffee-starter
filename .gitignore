@@ -1,0 +1,4 @@
+dist/*
+!dist/index.html
+!dist/mocha.css
+node_modules/

@@ -1,0 +1,62 @@
+{
+  "name": "webpack-coffee-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "mocha": "mocha --compilers coffee:coffee-script/register",
+    "webpack": "webpack --config index.js",
+    "watch": "npm i && npm run webpack -- -w",
+    "webpack-dev-server": "webpack-dev-server --config index.js",
+    "livereload": "livereload",
+    "ws": "ws",
+    "dev": "npm i && npm-run-all --parallel watch webpack-dev-server livereload ws",
+    "test": "npm i && npm run mocha -- --recursive test/",
+    "start": "npm run test -- -w"
+  },
+  "author": "Maksim Kostromin",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.10.0",
+    "istanbul": "^0.4.2",
+    "livereload": "^0.4.1",
+    "local-web-server": "^1.2.1",
+    "mocha": "^2.4.5",
+    "mocha-loader": "^0.7.1",
+    "npm-run-all": "^1.6.0",
+    "webpack": "^1.12.14"
+  },
+  "dependencies": {},
+  "description": "webpack coffee-script mocha chai",
+  "keywords": [
+    "webpack",
+    "coffee-script",
+    "mocha",
+    "chai",
+    "livereload",
+    "local-web-server"
+  ],
+  "local-web-server": {
+    "directory": "dist/",
+    "port": 3000,
+    "forbid": [
+      "*.json",
+      "*.ts",
+      "*.md",
+      "*.yml",
+      "*.config.coffee",
+      ".gitignore"
+    ],
+    "no-cache": true
+  },
+  "livereload": {
+    "exclusions": [
+      "*.git",
+      "node_modules/**/*.*",
+      ".gitignore",
+      "*.json",
+      "*.md"
+    ]
+  }
+}
